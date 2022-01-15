@@ -1,0 +1,9 @@
+Creating package "jupy_tools"
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+.snakemake
+test/output
+conda.env

@@ -15,9 +15,9 @@ Activate the environment
 
     conda activate ./conda.env
 
-Just run snakemake to teste
+Just run snakemake to test. (-j 5: use 5 threads)
 
-    snakemake
+    snakemake -j 5
 
 ## Run
 
