@@ -1,0 +1,13 @@
+channels:
+    - conda-forge
+    - bioconda
+    - jmeppley
+dependencies:
+    - snakemake-minimal
+    - pandas
+    - matplotlib
+    - jupy_tools
+    - minimap2
+    - biopython
+    - scipy
+    - scikit-learn
