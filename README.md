@@ -33,23 +33,9 @@ Just run snakemake to test. (-j 5: use 5 threads)
     
 ### A Note on conda for Mac M1 and M2 chips
 
-Apple MacOS devices with an M1 or M2 processor can run either the "macOS Apple M1" (aka "arm") version of conda or the "macOS Intel x86" (aka "intel") version. The binaries compiled for intel will run more slowly than the M1 binaries, but not everything is avaiable for M1/M2 yet. For this project, the bioconda tools minimap2 and snakemake are missing. 
+Apple MacOS devices with an M1 or M2 processor can run either the "macOS Apple M1" (aka "arm") version of conda or the "macOS Intel x86" (aka "intel") version. The binaries compiled for intel will run a little more slowly than the M1 binaries, but not everything is avaiable for M1/M2 yet. In general, the bioconda packages are not yet available for M1/M2, but for this project, the one we need (minimap) is available in my conda channel. 
 
-To use this repository on Apple Silicon (aka M1/M2 chips), you have two choices:
-
- 1) Install the Intel conda from the start. This is the simplest option, but things may run a little slower.
-
- 2) Install the Apple M1 conda, but configure it to use the Intel binaries when you need something specific. AFter you have installed conda, when you need to install something that's not available for M1/M2, you can configure conda to also look for intel binaries with:subdirectories for binaries:
-
-````
-conda config --add subdirs osx-64
-````
-
-I would recommend reverting this change when you're done here:
-
-    conda config --remove subdirs osx-64
-
-It's best to use primarily the arm binaries and only fall back to the intel ones when absolutely necessary. Avoid mixing binary types in your promary conda environment(s). Only try the intel binaries in separate, dedicated-use environments. 
+TL;DR: Either of the mac-os 64-bit versions of miniconda should work here.
 
 ## Run
 
