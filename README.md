@@ -46,3 +46,17 @@ dir. See the snakemake docs for running elsewhere.
                        reads_template='/path/to/{sample}.reads.fasta'
 
 The above assumes reads from each sample are in a single fasta file per sample.
+
+## About the output
+
+For each sample, the workflow will generate a table with results for each method used. For each method, there will be 4 columns:
+
+ * repeat_size: the size of the repeated element
+ * copies: the number of repeats
+ * repeat_score: a measure of how well the repeated sequences match
+ * state: a final deterimination of whether the method thinks this is a repeat. This looks at repeat_score and copies.
+ 
+There are up to four methods: combinations of the two search engines (minimap and lastal) and the two heuristics (cluster and fft). So the columns will look like:
+
+    repeat_size_lastal_fft ... state_lastal_fft ... copies_minimap_fft ... state_minimap_cluster
+
